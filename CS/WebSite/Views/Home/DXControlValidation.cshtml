@@ -1,0 +1,8 @@
+@model RoundPanelValidation.Models.Person
+    
+@Html.DevExpress().RoundPanel(settings => {
+    settings.Name = "roundPanel";
+    settings.SetContent(() => {
+        Html.RenderPartial("DXControlValidationPartial", Model);
+    });
+}).GetHtml()
