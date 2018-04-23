@@ -1,0 +1,24 @@
+﻿@model RoundPanelValidation.Models.Person
+        
+@{Html.EnableUnobtrusiveJavaScript();}
+
+@using (Html.BeginForm("StandardControlValidationPartial", "Home", FormMethod.Post)) {
+    <div>
+        <label for="FirstName">FirstName:</label>
+        @Html.TextBoxFor(model => model.FirstName)
+        @Html.ValidationMessageFor(model => model.FirstName)
+    </div>
+    <div>
+        <label for="LastName">LastName:</label>
+        @Html.TextBoxFor(model => model.LastName)
+        @Html.ValidationMessageFor(model => model.LastName)
+    </div>
+    <div>
+        <label for="Email">Email:</label>
+        @Html.TextBoxFor(model => model.Email)
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+    <div class="line">
+        <input type="submit" value="Update"/>
+    </div>
+}

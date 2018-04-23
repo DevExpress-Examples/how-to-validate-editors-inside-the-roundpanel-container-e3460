@@ -1,0 +1,60 @@
+﻿@model RoundPanelValidation.Models.Person
+        
+@{Html.EnableUnobtrusiveJavaScript();}
+
+@using(Html.BeginForm("DXControlValidationPartial", "Home", FormMethod.Post)) {
+    <div>
+        @Html.DevExpress().Label(
+            settings => {
+                settings.Text = "FirstName:";
+                settings.AssociatedControlName = "FirstName";
+            }
+        ).GetHtml()
+        @Html.DevExpress().TextBox(
+            settings => {
+                settings.Name = "FirstName";
+                settings.ShowModelErrors = true;
+                settings.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithText;
+            }
+        ).Bind(Model.FirstName).GetHtml()
+    </div>
+    <div>
+        @Html.DevExpress().Label(
+            settings => {
+                settings.Text = "LastName:";
+                settings.AssociatedControlName = "LastName";
+            }
+        ).GetHtml()
+        @Html.DevExpress().TextBox(
+            settings => {
+                settings.Name = "LastName";
+                settings.ShowModelErrors = true;
+                settings.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithText;
+            }
+        ).Bind(Model.LastName).GetHtml()
+    </div>
+    <div>
+        @Html.DevExpress().Label(
+            settings => {
+                settings.Text = "Email:";
+                settings.AssociatedControlName = "Email";
+            }
+        ).GetHtml()
+        @Html.DevExpress().TextBox(
+            settings => {
+                settings.Name = "Email";
+                settings.ShowModelErrors = true;
+                settings.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithText;
+            }
+        ).Bind(Model.Email).GetHtml()
+    </div>
+    <div>
+        @Html.DevExpress().Button(
+            settings => {
+                settings.Name = "btnUpdate";
+                settings.Text = "Update";
+                settings.UseSubmitBehavior = true;
+            }
+        ).GetHtml()
+    </div>
+}
