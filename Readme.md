@@ -12,7 +12,7 @@
 <!-- default file list end -->
 # How to validate editors inside the RoundPanel container
 <!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/e3460)**
+**[[Run Online]](https://codecentral.devexpress.com/e3460/)**
 <!-- run online end -->
 
 
